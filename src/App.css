@@ -1,0 +1,62 @@
+.App {
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 7px;
+}
+.lay1{
+    display: inline-block;
+    width: 500px;
+    height: 100px;
+}
+.lay2{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border-right: 1px solid rgb(189, 189, 189);
+}
+.lay3{
+    display: inline-block;
+    width: 240px;
+    height: 250px;
+}
+.lay4{
+    display: inline-block;
+    width: 500px;
+    height: 100px;
+}
+.rock-area{
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 50px;
+    display: inline-block;
+}
+.scissors-area{
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 50px;
+    display: inline-block;
+}
+.paper-area{
+    margin-top: 15px;
+    margin-left: 50px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 50px;
+    display: inline-block;
+}
+.rock-size, .scissors-size, .paper-size{
+    width: 70px;
+    height: 70px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+.rock-size:hover, .scissors-size:hover, .paper-size:hover{
+    cursor: pointer;
+}
