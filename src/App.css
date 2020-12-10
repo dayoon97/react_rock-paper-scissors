@@ -12,6 +12,7 @@
 }
 .lay2{
     display: inline-block;
+    float: left;
     width: 250px;
     height: 250px;
     border-right: 1px solid rgb(189, 189, 189);
@@ -59,4 +60,16 @@
 }
 .rock-size:hover, .scissors-size:hover, .paper-size:hover{
     cursor: pointer;
+}
+.App{
+    box-shadow: 3px 5px 5px 3px rgb(201, 201, 201);
+}
+.rockImg{
+    padding: 50px;
+}
+.sciImg{
+    padding: 50px;
+}
+.paImg{
+    padding: 50px;
 }
