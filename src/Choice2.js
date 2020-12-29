@@ -18,21 +18,18 @@ class Choice2 extends React.Component {
       this.setState(prevState => ({
         img: 1
       }));
-      console.log(this.state.img);
     }
 
     onClickScissors() {
       this.setState(prevState => ({
         img: 2
       }));
-      console.log(this.state.img);
     }
 
     onClickPaper() {
       this.setState(prevState => ({
         img: 3
       }));
-      console.log(this.state.img);
     }
   
     render() {
@@ -42,33 +39,17 @@ class Choice2 extends React.Component {
         <div className="lay2">
         {this.state.img === 1? 
           <div className="rock">
-              <img src={rock} alt="rock" className="roImg" />
+              <img src={rock} alt="rock" className="rockImg" />
           </div> : null }
         {this.state.img === 2?
           <div className="scissors">
-              <img src={scissors} alt="scissors" className="scImg" />
+              <img src={scissors} alt="scissors" className="sciImg" />
           </div> : null }
         {this.state.img === 3?
           <div className="paper">
             <img src={paper} alt="paper" className="paImg" />
           </div> : null }
         </div>
-          {/* //   if (this.state.img === 1) return (
-          //   <div className="rock">
-          //     <img src={rock} alt="rock" className="roImg" />
-          //   </div>
-          //   );
-          //   else if (this.state.img === 2)return (
-          //   <div className="scissors">
-          //     <img src={scissors} alt="scissors" className="scImg" />
-          //   </div>
-          //   );
-          //   else if (this.state.img === 3)return (
-          //   <div className="paper">
-          //     <img src={paper} alt="paper" className="paImg" />
-          //   </div>
-          //   );
-          // })() */}
         <div className="lay3"></div>
         <div className="lay4">
           <div className="rock-area">
