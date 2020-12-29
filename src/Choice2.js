@@ -9,17 +9,29 @@ class Choice2 extends React.Component {
     constructor(props) {
       super(props);
 
-      this.state = {img: 0, img2: 0};
+      this.state = {img: 0, img2: 0, youSum: 0, comSum: 0};
       this.onClickRock = this.onClickRock.bind(this);
       this.onClickPaper = this.onClickPaper.bind(this);
       this.onClickScissors = this.onClickScissors.bind(this);
     }
-  
+
     onClickRock() {
+      
       this.setState(prevState => ({
         img: 1,
         img2: Random()
       }));
+
+      if(this.state.img2 === 1){
+        this.setState(prevState => ({
+          youSum: this.state.youSum + 1
+        }));
+      } else if(this.state.img2 === 3){
+        this.setState(prevState => ({
+          comSum: this.state.comSum + 1
+        }));
+      }
+     
     }
 
     onClickScissors() {
@@ -27,6 +39,17 @@ class Choice2 extends React.Component {
         img: 2,
         img2: Random()
       }));
+
+      if(this.state.img2 === 1){
+        this.setState(prevState => ({
+          youSum: this.state.youSum + 1
+        }));
+      } else if(this.state.img2 === 3){
+        this.setState(prevState => ({
+          comSum: this.state.comSum + 1
+        }));
+      }
+
     }
 
     onClickPaper() {
@@ -34,17 +57,28 @@ class Choice2 extends React.Component {
         img: 3,
         img2: Random()
       }));
+      
+      if(this.state.img2 === 2){
+        this.setState(prevState => ({
+          youSum: this.state.youSum + 1
+        }));
+      } else if(this.state.img2 === 1){
+        this.setState(prevState => ({
+          comSum: this.state.comSum + 1
+        }));
+      }
+      
     }
-  
+
     render() {
       return (
         <div className="App">
         <div className="lay1">
           <div className="youCoinLay">
-            <div className="youCoin">0</div>
+            <div className="youCoin">{this.state.youSum}</div>
           </div>
           <div className="comCoinLay">
-            <div className="comCoin">0</div>
+            <div className="comCoin">{this.state.comSum}</div>
           </div>
         </div>
         <div className="lay2">
