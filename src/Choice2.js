@@ -3,12 +3,13 @@ import rock from './rock.jpg';
 import scissors from './scissors.jpg';
 import paper from './paper.jpg';
 import './Choice.css';
+import Random from './Random.js';
 
 class Choice2 extends React.Component {
     constructor(props) {
       super(props);
 
-      this.state = {img: 0};
+      this.state = {img: 0, img2: 0};
       this.onClickRock = this.onClickRock.bind(this);
       this.onClickPaper = this.onClickPaper.bind(this);
       this.onClickScissors = this.onClickScissors.bind(this);
@@ -16,27 +17,38 @@ class Choice2 extends React.Component {
   
     onClickRock() {
       this.setState(prevState => ({
-        img: 1
+        img: 1,
+        img2: Random()
       }));
     }
 
     onClickScissors() {
       this.setState(prevState => ({
-        img: 2
+        img: 2,
+        img2: Random()
       }));
     }
 
     onClickPaper() {
       this.setState(prevState => ({
-        img: 3
+        img: 3,
+        img2: Random()
       }));
     }
   
     render() {
       return (
         <div className="App">
-        <div className="lay1"></div>
+        <div className="lay1">
+          <div className="youCoinLay">
+            <div className="youCoin">0</div>
+          </div>
+          <div className="comCoinLay">
+            <div className="comCoin">0</div>
+          </div>
+        </div>
         <div className="lay2">
+          <div className="you">YOU</div>
         {this.state.img === 1? 
           <div className="rock">
               <img src={rock} alt="rock" className="rockImg" />
@@ -50,7 +62,21 @@ class Choice2 extends React.Component {
             <img src={paper} alt="paper" className="paImg" />
           </div> : null }
         </div>
-        <div className="lay3"></div>
+        <div className="lay3">
+          <div className="com">COM</div>
+        {this.state.img2 === 1? 
+          <div className="rock">
+              <img src={rock} alt="rock" className="rockImg" />
+          </div> : null }
+        {this.state.img2 === 2?
+          <div className="scissors">
+              <img src={scissors} alt="scissors" className="sciImg" />
+          </div> : null }
+        {this.state.img2 === 3?
+          <div className="paper">
+            <img src={paper} alt="paper" className="paImg" />
+          </div> : null }
+        </div>
         <div className="lay4">
           <div className="rock-area">
             <img className="rock-size" id="rock" src={rock} alt="rock" onClick={this.onClickRock}/>

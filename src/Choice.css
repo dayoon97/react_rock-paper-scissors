@@ -5,6 +5,10 @@
     border: 1px solid rgb(189, 189, 189);
     border-radius: 7px;
 }
+.rock, .scissors, .paper{
+    width: 240px;
+    height: 240px;
+}
 .lay1{
     display: inline-block;
     width: 500px;
@@ -23,28 +27,12 @@
     height: 250px;
 }
 .lay4{
+    padding-top: 15px;
     display: inline-block;
     width: 500px;
-    height: 100px;
+    height: 120px;
 }
-.rock-area{
-    margin-left: 50px;
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgb(189, 189, 189);
-    border-radius: 50px;
-    display: inline-block;
-}
-.scissors-area{
-    margin-left: 50px;
-    width: 100px;
-    height: 100px;
-    border: 1px solid rgb(189, 189, 189);
-    border-radius: 50px;
-    display: inline-block;
-}
-.paper-area{
-    margin-top: 15px;
+.rock-area, .scissors-area, .paper-area{
     margin-left: 50px;
     width: 100px;
     height: 100px;
@@ -64,12 +52,20 @@
 .App{
     box-shadow: 3px 5px 5px 3px rgb(201, 201, 201);
 }
-.rockImg{
-    padding: 50px;
+.rockImg, .sciImg, .paImg{
+    margin-left: 50px;
+    margin-top: 40px;
 }
-.sciImg{
-    padding: 50px;
+.you, .com{
+    text-align: center;
+    font-size: 20px;
 }
-.paImg{
-    padding: 50px;
+.youCoinLay, .comCoinLay{
+    width: 250px;
+    height: 50px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+    font-weight: bold;
 }
