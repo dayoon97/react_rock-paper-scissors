@@ -4,109 +4,101 @@ import scissors from './scissors.jpg';
 import paper from './paper.jpg';
 import './Choice.css';
 import Random from './Random.js';
+import { decorate, observable, action } from 'mobx';
+import { observer } from 'mobx-react';
+
+
 
 class Choice2 extends React.Component {
+  youSum = 0;
+  comSum = 0;
+
     constructor(props) {
       super(props);
 
-      this.state = {img: 0, img2: 0, youSum: 0, comSum: 0};
       this.onClickRock = this.onClickRock.bind(this);
       this.onClickPaper = this.onClickPaper.bind(this);
       this.onClickScissors = this.onClickScissors.bind(this);
     }
 
-    onClickRock() {
-      
-      this.setState(prevState => ({
-        img: 1,
-        img2: Random()
-      }));
+    onClickRock = () => {
+      this.img = 1;
+      this.img2 = Random();
 
-      if(this.state.img2 === 1){
-        this.setState(prevState => ({
-          youSum: this.state.youSum + 1
-        }));
-      } else if(this.state.img2 === 3){
-        this.setState(prevState => ({
-          comSum: this.state.comSum + 1
-        }));
-      }
-     
-    }
-
-    onClickScissors() {
-      this.setState(prevState => ({
-        img: 2,
-        img2: Random()
-      }));
-
-      if(this.state.img2 === 1){
-        this.setState(prevState => ({
-          youSum: this.state.youSum + 1
-        }));
-      } else if(this.state.img2 === 3){
-        this.setState(prevState => ({
-          comSum: this.state.comSum + 1
-        }));
+      if(this.img2 === 1){
+        this.youSum++;
+      } else if(this.img2 === 3){
+        this.comSum++;
       }
 
-    }
+      console.log("img : " + this.img);
+      console.log("나 : " + this.youSum);
+      console.log("컴 : " + this.comSum);
 
-    onClickPaper() {
-      this.setState(prevState => ({
-        img: 3,
-        img2: Random()
-      }));
+    };
+
+    onClickScissors = () => {
+      this.img = 2;
+      this.img2 = Random();
+    
+      if(this.img2 === 1){
+        this.youSum++;
+      } else if(this.img2 === 3){
+        this.comSum++;
+      }
+
+    };
+
+    onClickPaper = () => {
+      this.img = 3;
+      this.img2 = Random();
       
-      if(this.state.img2 === 2){
-        this.setState(prevState => ({
-          youSum: this.state.youSum + 1
-        }));
-      } else if(this.state.img2 === 1){
-        this.setState(prevState => ({
-          comSum: this.state.comSum + 1
-        }));
+      if(this.img2 === 2){
+        this.youSum++;
+      } else if(this.img2 === 1){
+        this.comSum++;
       }
       
     }
 
     render() {
+      
       return (
         <div className="App">
         <div className="lay1">
           <div className="youCoinLay">
-            <div className="youCoin">{this.state.youSum}</div>
+            <div className="youCoin">{this.youSum}</div>
           </div>
           <div className="comCoinLay">
-            <div className="comCoin">{this.state.comSum}</div>
+            <div className="comCoin">{this.comSum}</div>
           </div>
         </div>
         <div className="lay2">
           <div className="you">YOU</div>
-        {this.state.img === 1? 
+        {this.img === 1? 
           <div className="rock">
               <img src={rock} alt="rock" className="rockImg" />
           </div> : null }
-        {this.state.img === 2?
+        {this.img === 2?
           <div className="scissors">
               <img src={scissors} alt="scissors" className="sciImg" />
           </div> : null }
-        {this.state.img === 3?
+        {this.img === 3?
           <div className="paper">
             <img src={paper} alt="paper" className="paImg" />
           </div> : null }
         </div>
         <div className="lay3">
           <div className="com">COM</div>
-        {this.state.img2 === 1? 
+        {this.img2 === 1? 
           <div className="rock">
               <img src={rock} alt="rock" className="rockImg" />
           </div> : null }
-        {this.state.img2 === 2?
+        {this.img2 === 2?
           <div className="scissors">
               <img src={scissors} alt="scissors" className="sciImg" />
           </div> : null }
-        {this.state.img2 === 3?
+        {this.img2 === 3?
           <div className="paper">
             <img src={paper} alt="paper" className="paImg" />
           </div> : null }
@@ -126,4 +118,13 @@ class Choice2 extends React.Component {
       );
     }
   }
+
+// decorate(Choice2, {
+//   img: observable,
+//   img2: observable,
+//   youSum: observable,
+//   comSum: observable
+
+// })
+
   export default Choice2;

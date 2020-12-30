@@ -7,6 +7,8 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.5.0",
     "jquery": "^3.5.1",
+    "mobx": "^6.0.4",
+    "mobx-react": "^7.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.1",
@@ -36,5 +38,13 @@
   },
   "devDependencies": {
     "prettier": "2.2.1"
+  },
+  "barbel": {
+    "plugins": [
+      "transform-decorators-legacy"
+    ],
+    "presets": [
+      "react-app"
+    ]
   }
 }
