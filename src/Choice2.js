@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import rock from './rock.jpg';
 import scissors from './scissors.jpg';
 import paper from './paper.jpg';
+import rock_emoji from './rock_emoji.png';
+import v_emoji from './v_emoji.png';
 import './Choice.css';
 import Random from './Random.js';
 import { decorate, observable, action } from 'mobx';
@@ -9,9 +11,13 @@ import { observer } from 'mobx-react';
 
 
 
-class Choice2 extends React.Component {
-  youSum = 0;
-  comSum = 0;
+class Choice2 extends Component {
+    youSum = 0;
+    comSum = 0;
+    img = 0;
+    img2 = 0;
+
+    
 
     constructor(props) {
       super(props);
@@ -32,6 +38,7 @@ class Choice2 extends React.Component {
       }
 
       console.log("img : " + this.img);
+      console.log("img2 : " + this.img2);
       console.log("나 : " + this.youSum);
       console.log("컴 : " + this.comSum);
 
@@ -62,7 +69,7 @@ class Choice2 extends React.Component {
     }
 
     render() {
-      
+
       return (
         <div className="App">
         <div className="lay1">
@@ -120,11 +127,14 @@ class Choice2 extends React.Component {
   }
 
 // decorate(Choice2, {
-//   img: observable,
-//   img2: observable,
-//   youSum: observable,
-//   comSum: observable
+//   img: 'observable',
+//   img2: 'observable',
+//   youSum: 'observable',
+//   comSum: 'observable',
+//   onClickRock: 'action',
+//   onClickScissors: 'action',
+//   onClickPaper: 'action'
 
-// })
+// });
 
   export default Choice2;
